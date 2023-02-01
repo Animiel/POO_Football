@@ -56,8 +56,17 @@ class Joueur {
         $this->listeEquipes[] = $mercato;
     }
 
+    public function afficherEquipe() {
+        $result = "Les équipes dans lesquelles $this->nom $this->prenom a joué :<br><ul>";
+        foreach ($this->listeEquipes as $equipe) {
+            $result .= "<li>".$equipe->getEquipe()." (".$equipe->getSaison().")</li><br>";
+        }
+        $result .= "</ul>";
+        return $result."<br>";
+    }
+
     public function __toString() {
-        return "$this->nom $this->prenom";
+        return "$this->nom $this->prenom (".$this->calculAge()." ans $this->nationalite)";
     }
 }
 ?>

@@ -15,4 +15,5 @@ $mercato3 = new Mercato($equipe2, $joueur2, "2008-02-02");
 
 echo $equipe1->afficherEquipe();
 echo $equipe2->afficherEquipe();
+echo $joueur2->afficherEquipe();
 ?>
