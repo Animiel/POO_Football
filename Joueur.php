@@ -4,12 +4,14 @@ class Joueur {
     private string $prenom;
     private DateTime $naissance;
     private string $nationalite;
+    private array $listeEquipes;
 
     public function __construct(string $nom, string $prenom, string $date, string $nationalite) {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->naissance = new DateTime($date);
         $this->nationalite = $nationalite;
+        $this->listeEquipes = [];
     }
 
     public function getNom() {
@@ -48,6 +50,10 @@ class Joueur {
         $now = new DateTime("now");
         $age = $this->naissance->diff($now);
         return $age->format('%Y');
+    }
+
+    public function ajouterMercato(Mercato $mercato) {
+        $this->listeEquipes[] = $mercato;
     }
 
     public function __toString() {
