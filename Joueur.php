@@ -44,6 +44,12 @@ class Joueur {
         $this->nationalite = $nationalite;
     }
 
+    public function calculAge() {
+        $now = new DateTime("now");
+        $age = $this->naissance->diff($now);
+        return $age->format('%Y');
+    }
+
     public function __toString() {
         return "$this->nom $this->prenom";
     }
