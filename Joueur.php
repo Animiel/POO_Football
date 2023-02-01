@@ -3,10 +3,10 @@ class Joueur {
     private string $nom;
     private string $prenom;
     private DateTime $naissance;
-    private string $nationalite;
+    private Pays $nationalite;
     private array $listeEquipes;
 
-    public function __construct(string $nom, string $prenom, string $date, string $nationalite) {
+    public function __construct(string $nom, string $prenom, string $date, Pays $nationalite) {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->naissance = new DateTime($date);
